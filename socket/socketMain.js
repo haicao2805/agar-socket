@@ -92,7 +92,7 @@ io.sockets.on("connect", async (socket) => {
         }, 30);
 
         socket.emit("initReturn", { orbs });
-
+        console.log(`Creater player: ${player.playerData.name}`)
         players.push(playerData);
     })
 
