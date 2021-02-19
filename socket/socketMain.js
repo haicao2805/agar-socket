@@ -98,7 +98,9 @@ io.sockets.on("connect", async (socket) => {
 
 
     socket.on("sendVector", (data) => {
-        let speed = player.playerConfig.speed;
+        let speed = 0;
+        if (player.playerConfig)
+            speed = player.playerConfig.speed;
         // update the playerConfig object
         let xV = player.playerConfig.xVector = data.xVector;
         let yV = player.playerConfig.yVector = data.yVector;
