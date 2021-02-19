@@ -17,7 +17,7 @@ socket.on("initReturn", (data) => {
             xVector: player.xVector,
             yVector: player.yVector
         })
-    }, 33);
+    }, 30);
 })
 
 socket.on("sendListOfPlayers", (data) => {

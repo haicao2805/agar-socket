@@ -10,12 +10,12 @@ const checkPlayerCollision = require("../helper/checkCollision").checkPlayerColl
 let orbs = [];
 let players = [];
 let gameSettings = {
-    defaultOrbs: 50,
+    defaultOrbs: 5000,
     defaultSpeed: 5,
     defaultSize: 20,
     defaultZoom: 1.5,
-    worldWidth: 500,
-    worldHeight: 500
+    worldWidth: 5000,
+    worldHeight: 5000
 }
 
 initGame();
@@ -28,7 +28,7 @@ setInterval(() => {
         });
         io.to("game").emit("sendListOfPlayers", { players });
     }
-}, 33);
+}, 30);
 
 io.sockets.on("connect", async (socket) => {
     let count = 0;
@@ -89,7 +89,7 @@ io.sockets.on("connect", async (socket) => {
                 let statData = await getDB().collection("player").find().toArray();
                 socket.emit("statData", statData);
             }
-        }, 33);
+        }, 30);
 
         socket.emit("initReturn", { orbs });
 
