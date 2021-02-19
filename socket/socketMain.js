@@ -34,7 +34,7 @@ io.sockets.on("connect", async (socket) => {
     let count = 0;
     let delayInterval = setInterval(async () => {
         count++;
-        if (count === 2) {
+        if (count === 1) {
             let statData = await getDB().collection("player").find().toArray();
             io.emit("statData", statData);
             clearInterval(delayInterval);

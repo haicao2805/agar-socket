@@ -1,4 +1,5 @@
 const url = "https://agar-socket.herokuapp.com";
+//const url = "http://localhost:5000"
 let socket = io(url);
 let sendVectorInterval;
 function init() { // call when player click "play" btn
