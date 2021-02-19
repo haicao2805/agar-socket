@@ -9,8 +9,9 @@ app.use(express.static(__dirname + "/public"));
 
 // app.use("/", googleAPI);
 
-const expressServer = app.listen(5000 || process.env.PORT);
-console.log(`Running on PORT: ${process.env.PORT}`);
+const expressServer = app.listen(5000 || process.env.PORT, "0.0.0.0", () => {
+    console.log(`Running on PORT: ${process.env.PORT}................`);
+});
 const socketIO = require("socket.io");
 const io = socketIO(expressServer, { cors: { origin: "*" } });
 // more setup
