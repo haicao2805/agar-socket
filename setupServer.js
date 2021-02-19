@@ -9,7 +9,8 @@ app.use(express.static(__dirname + "/public"));
 
 // app.use("/", googleAPI);
 
-const expressServer = app.listen(5000 || process.env.PORT, "0.0.0.0", () => {
+const expressServer = app.listen(5000 || process.env.PORT, "0.0.0.0", (error) => {
+    if (error) console.log(`Error: ${error}.............`);
     console.log(`Running on PORT: ${process.env.PORT}................`);
 });
 const socketIO = require("socket.io");
