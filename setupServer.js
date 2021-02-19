@@ -1,13 +1,8 @@
 // setup io
-// const passport = require("passport");
 const express = require("express");
-// const googleAPI = require("./router/googleAPI");
 const app = express();
-// app.use(passport.initialize());
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-
-// app.use("/", googleAPI);
 
 const expressServer = app.listen(5000 || process.env.PORT, "0.0.0.0", (error) => {
     if (error) console.log(`Error: ${error}.............`);
