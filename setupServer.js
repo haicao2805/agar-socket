@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
 
-const expressServer = app.listen(5000 || process.env.PORT, "0.0.0.0", (error) => {
+const expressServer = app.listen(process.env.PORT || 5000, "0.0.0.0", (error) => {
     if (error) console.log(`Error: ${error}.............`);
     console.log(`Running on PORT: ${process.env.PORT}................`);
 });
