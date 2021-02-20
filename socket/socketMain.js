@@ -28,7 +28,7 @@ setInterval(() => {
         });
         io.to("game").emit("sendListOfPlayers", { players });
     }
-}, 30);
+}, 60);
 
 io.sockets.on("connect", async (socket) => {
     let count = 0;
@@ -89,7 +89,7 @@ io.sockets.on("connect", async (socket) => {
                 let statData = await getDB().collection("player").find().toArray();
                 socket.emit("statData", statData);
             }
-        }, 30);
+        }, 60);
 
         socket.emit("initReturn", { orbs });
         console.log(`Creater player: ${player.playerData.name}`)
