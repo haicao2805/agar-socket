@@ -159,10 +159,6 @@ io.sockets.on("connect", async (socket) => {
                         io.sockets.emit("updateLeaderBoard", getLeaderBoard());
                     }
                 })
-
-                // update stats here.....
-                //console.log("update");
-
             }
         })
     });

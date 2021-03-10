@@ -77,7 +77,6 @@ socket.on("isDeath", async (data) => {
 
 socket.on("statData", (data) => {
     data = data.sort();
-    console.log(data);
     let statBody = document.querySelector(".stat-body");
     statBody.innerHTML = "";
     data.forEach((e) => {
